@@ -1,0 +1,392 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+body {
+    background-color: #000039;
+    max-width: 100vw;
+    height: 100vh;
+    margin: 0 0;
+}
+
+#startmenu {
+    background-color: #000039;
+    z-index:100;
+    height: 100vh;
+    width:100vw;
+    position: absolute;
+    border-radius: 20px;
+    display: flex;
+    flex:0 1 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-startmenu {
+    margin-top: 1rem;
+    min-width: 20%;
+}
+
+.startcontainer {
+    background-image: linear-gradient(to right top, #6b6bd1, #647dda, #628de0, #669ce4, #70abe6, #64b7ed, #5ac3f2, #55cff4, #0fddf2, #00e9e6, #11f3cf, #5ffbb0);
+    color: white;
+    width: 50%;
+    padding: 1rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-family:'Berkshire Swash', cursive;
+    font-size: 4rem;
+    text-align: center;
+    margin: 0 0;
+}
+
+h2 {
+    margin-top:0;
+}
+
+.button-startmenu {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#usernamecontainer {
+    background-image: linear-gradient(to right top, #6b6bd1, #647dda, #628de0, #669ce4, #70abe6, #64b7ed, #5ac3f2, #55cff4, #0fddf2, #00e9e6, #11f3cf, #5ffbb0);
+    color: white;
+    width: 50%;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 20px;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+
+#startbtn {
+    margin-top: 1rem;
+    min-width: 15%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#menucontainer {
+    z-index: 90;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    width:100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.7s ease-in-out;
+}
+
+#menu {
+    background-color: #000039;
+    color: white;
+    width: 30%;
+    height:40%;
+    padding: 1rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#menu > button {
+    width: 50%;
+}
+
+#game {
+    background-color: #000039;
+    max-width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    grid-template-columns: 15% 85%;
+    grid-template-areas: "p b" "n r";
+    margin: 0 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+
+.playerbar {
+    grid-area: p;
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 25% 25% 25% 25%;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+    color: white;
+}
+
+.joueur {
+    background-image: linear-gradient(to right top, #6b6bd1, #647dda, #628de0, #669ce4, #70abe6, #64b7ed, #5ac3f2, #55cff4, #0fddf2, #00e9e6, #11f3cf, #5ffbb0);
+    margin: 0.5rem 0 0 0;
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    border: 4px solid transparent;
+}
+
+.nav{
+    grid-area: n;
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+}
+
+button {
+    margin: 0.5rem 0 0 0;
+    background-color: #000039;
+    color:white;
+    border-radius: 20px;
+    font-size: 20px;
+
+}
+
+.rack {
+    grid-area: r;
+    background-image: linear-gradient(to left bottom, #6b6bd1, #009af9, #00c1fa, #00e1db, #5ffbb0);
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    border-radius:20px;
+}
+
+.hand {
+    justify-self: flex-end;
+    margin: 1rem auto 1rem auto;
+    border-radius:20px;
+    position:relative;
+}
+
+#board {
+    grid-area: b;
+    background-image: linear-gradient(to right top, #6b6bd1, #647dda, #628de0, #669ce4, #70abe6, #64b7ed, #5ac3f2, #55cff4, #0fddf2, #00e9e6, #11f3cf, #5ffbb0);
+    margin:0.5rem 1rem 0.5rem 1rem;
+    border-radius:20px;
+    display:grid;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+#board > .domino {
+    display: inline-block;
+}
+
+#hand > .domino {
+    display: inline-block;
+    margin: 3px;
+}
+
+button:hover {
+    border: 2px solid #6b6bd1;
+    background-color: #70abe6;
+    transition: all 0.2s linear;
+}
+/* #board:after {
+    content: '';
+    position: absolute;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index:1;
+    background: transparent;
+} */
+
+#boardgame {
+    width:1rem;
+    height:1rem;
+    position: relative;
+}
+
+.domino {
+    width: 2rem;
+    min-height: 4rem;
+    margin:auto auto auto auto;
+    transition: all 0.3s ease-in-out;
+    position:relative;
+    opacity: 1;
+    border: 1px solid black;
+    display: none;
+}
+
+
+
+.rack .domino:hover {
+    width: 2.5rem;
+    min-height: 5rem;
+    transition: all 0.1s ease-in-out;
+}
+ 
+#reserve {
+    z-index: -8000;
+    display: none;
+}
+
+
+.alignup {
+    left: -1rem;
+  }
+
+.aligndown {
+    left: 1rem;
+  }
+
+#drefvert {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;   
+}
+
+#drefhori {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;   
+}
+
+#dA {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dE {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dB {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dF {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dD {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dH {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dC {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;
+    transform: rotate(0deg);  
+}
+
+#dG {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dI {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dJ {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dK {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dL {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dM {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dN {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dO {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dP {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dQ {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dR {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dS {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
+
+#dT {
+    top:0rem;
+    left:0rem;
+    border: 0px solid;  
+}
